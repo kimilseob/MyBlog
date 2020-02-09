@@ -73,7 +73,7 @@
 
 	
 
-	<update id="updateViewCnt" parameterType="com.freehoon.web.board.model.BoardVO">
+	<update id="updateViewCnt" parameterType="int">
 
 		UPDATE TBL_BOARD SET
 			VIEW_CNT = VIEW_CNT + 1

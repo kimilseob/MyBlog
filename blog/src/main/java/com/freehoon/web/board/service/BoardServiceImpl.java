@@ -3,10 +3,14 @@ package com.freehoon.web.board.service;
 
 
 import java.util.List;
+
 import javax.inject.Inject;
+
 import org.springframework.stereotype.Service;
+
 import com.freehoon.web.board.dao.BoardDAO;
 import com.freehoon.web.board.model.BoardVO;
+
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -27,10 +31,21 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardVO getBoardContent(int bid) throws Exception{
 
-		boardDAO.updateViewCnt(bid);
+		/*boardDAO.updateViewCnt(bid);
 
 		return boardDAO.getBoardContent(bid);
-
+		*/
+		
+		BoardVO boardVO = new BoardVO();
+	    
+		boardDAO.updateViewCnt(bid);
+	//	boardVO = boardDAO.getBoardContent(bid);
+		
+			boardVO.setBid(bid);
+			boardVO.setCate_cd("1111111111111111111111111111111111111");
+			boardDAO.updateBoard(boardVO);
+		
+		return boardVO;
 	}
 	
 	@Override
