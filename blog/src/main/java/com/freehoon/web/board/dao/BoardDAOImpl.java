@@ -28,8 +28,8 @@ public class BoardDAOImpl implements BoardDAO {
 	public BoardVO getBoardContent(int bid) throws Exception {
 		return sqlSession.selectOne("com.freehoon.web.board.boardMapper.getBoardContent", bid);
 	}
+	
 	@Override
-
 	public int insertBoard(BoardVO boardVO) throws Exception {
 
 		return sqlSession.insert("com.freehoon.web.board.boardMapper.insertBoard", boardVO);
@@ -39,7 +39,6 @@ public class BoardDAOImpl implements BoardDAO {
 
 
 	@Override
-
 	public int updateBoard(BoardVO boardVO) throws Exception {
 
 		return sqlSession.update("com.freehoon.web.board.boardMapper.updateBoard", boardVO);

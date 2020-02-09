@@ -3,6 +3,9 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+<%@ include file="/WEB-INF/views/layout/header.jsp"%>
+
 <!DOCTYPE html>
 
 <html>
@@ -11,26 +14,25 @@
 
 <meta charset="UTF-8">
 
-<!-- Bootstrap CSS -->
-
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-	crossorigin="anonymous">
-
-
 <title>board</title>
 
+<script>
+	$(document).on('click', '#btnWriteForm' , function(e){
+		e.preventDefault();
+		
+		location.href = "${pageContext.request.contextPath}/board/boardForm";
+	});
+</script>
 </head>
 
 <body>
 
-
+	
 	<article>
 		
 		<div class="container">
 			<div class="table-responsive">
-				<h2>board list</h2>
+				<h2>board list</h2>			
 				<table class="table table-striped table-sm">
 					<colgroup>
 						<col style="width: 5%;" />
@@ -70,7 +72,12 @@
 					</tbody>
 				</table>
 			</div>
+			<div>
+				<button type = "button" class ="btn btn-sm btn-primary" id = "btnWriteForm"> 글쓰기 </button>
+			</div>
 		</div>
+		
+		
 	</article>
 </body>
 </html>
