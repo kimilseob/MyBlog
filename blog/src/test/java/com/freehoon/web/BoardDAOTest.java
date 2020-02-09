@@ -31,7 +31,7 @@ public class BoardDAOTest {
 	@Inject
 	private BoardDAO boardDAO;
 
-	@Test 
+	@Test @Ignore
 	public void testGetBoardList() throws Exception {
 		List<BoardVO> boardList = boardDAO.getBoardList();
 		logger.info("\n Board List \n ");
@@ -67,7 +67,7 @@ public class BoardDAOTest {
 
 	
 
-	@Test @Ignore 
+	@Test 
 	public void testInsertBoard() throws Exception {
 		BoardVO boardVO = new BoardVO();
 		boardVO.setCate_cd("1");
