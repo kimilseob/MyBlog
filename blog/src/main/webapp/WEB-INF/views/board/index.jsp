@@ -29,51 +29,32 @@
 
 
 <script>
-
 	//이전 버튼 이벤트
 	//이전 버튼 이벤트
-
 function fn_prev(page, range, rangeSize) {
-
 		var page = ((range - 2) * rangeSize) + 1;
 		var range = range - 1;
-
-		var url = /*"${pageContext.request.contextPath}/board/getBoardList";*/"${getBoardList}";
+		var url = "${pageContext.request.contextPath}/board/getBoardList";;
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;		
-
 		location.href = url;
 	}
-
-
-
   //페이지 번호 클릭
-
 	function fn_pagination(page, range, rangeSize, searchType, keyword) {
-
 		var url = "${pageContext.request.contextPath}/board/getBoardList";
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;
 		location.href = url;	
-
 	}
-
-
-
 	//다음 버튼 이벤트
-
 	function fn_next(page, range, rangeSize) {
-
 		var page = parseInt((range * rangeSize)) + 1;
 		var range = parseInt(range) + 1;
-
 		var url = "${pageContext.request.contextPath}/board/getBoardList";
 		url = url + "?page=" + page;
 		url = url + "&range=" + range;
-
 		location.href = url;
 	}
-
 	$(document).on('click', '#btnWriteForm' , function(e){
 		e.preventDefault();
 		
@@ -81,46 +62,27 @@ function fn_prev(page, range, rangeSize) {
 	});
 	
 	function fn_contentView(bid){
-
 		var url = "${pageContext.request.contextPath}/board/getBoardContent";
 		url = url + "?bid="+bid;
 		location.href = url;
 	}
-
 	$(document).on('click', '#btnSearch', function(e){
-
 		e.preventDefault();
-
 		var url = "${pageContext.request.contextPath}/board/getBoardList";
-
 		url = url + "?searchType=" + $('#searchType').val();
-
 		url = url + "&keyword=" + $('#keyword').val();
-
 		location.href = url;
-
 		console.log(url);
-
 	});	
 	
 	$(document).on('click', '#btnSearch', function(e){
-
 		e.preventDefault();
-
-		var url = "${getBoardList}"; 
-
+		var url = "${pageContext.request.contextPath}/board/getBoardList"; 
 		url = url + "?searchType=" + $('#searchType').val();
-
 		url = url + "&keyword=" + $('#keyword').val();
-
 		location.href = url;
-
 		console.log(url);
-
 	});	
-
-
-
 </script>
 </head>
 
@@ -211,7 +173,6 @@ function fn_prev(page, range, rangeSize) {
 
 						<li class="page-item"><a class="page-link" href="#"
 							onClick="fn_next('${pagination.range}', 
-
 						'${pagination.range}', '${pagination.rangeSize}')">Next</a></li>
 
 					</c:if>
@@ -273,10 +234,6 @@ function fn_prev(page, range, rangeSize) {
 
 
 </div>
-
-
-
-
 
 </article>
 </body>
