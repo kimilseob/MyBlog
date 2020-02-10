@@ -7,11 +7,13 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.freehoon.common.Search;
 import com.freehoon.web.board.dao.BoardDAO;
 import com.freehoon.web.board.model.BoardVO;
 
-
+@Transactional
 @Service
 public class BoardServiceImpl implements BoardService{
 
@@ -19,8 +21,8 @@ public class BoardServiceImpl implements BoardService{
 	private BoardDAO boardDAO;
 	
 	@Override
-	public List<BoardVO> getBoardList() throws Exception {
-		return boardDAO.getBoardList();
+	public List<BoardVO> getBoardList(Search search) throws Exception {
+		return boardDAO.getBoardList(search);
 	}
 	
 	@Override
@@ -39,11 +41,11 @@ public class BoardServiceImpl implements BoardService{
 		BoardVO boardVO = new BoardVO();
 	    
 		boardDAO.updateViewCnt(bid);
-	//	boardVO = boardDAO.getBoardContent(bid);
+		boardVO = boardDAO.getBoardContent(bid);
 		
-			boardVO.setBid(bid);
-			boardVO.setCate_cd("1111111111111111111111111111111111111");
-			boardDAO.updateBoard(boardVO);
+			//boardVO.setBid(bid);
+			//boardVO.setCate_cd("1111111111111111111111111111111111111");
+			//boardDAO.updateBoard(boardVO);
 		
 		return boardVO;
 	}
@@ -59,7 +61,10 @@ public class BoardServiceImpl implements BoardService{
 		 boardDAO.deleteBoard(bid);
 	}
 
-
+	@Override
+	public int getBoardListCnt(Search search) throws Exception{
+		return boardDAO.getBoardListCnt(search);
+	}
 }
 
 

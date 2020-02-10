@@ -1,9 +1,13 @@
 package com.freehoon.web.board.dao;
 
 import java.util.List;
+
 import javax.inject.Inject;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
+import com.freehoon.common.Search;
 import com.freehoon.web.board.model.BoardVO;
 
 
@@ -18,8 +22,8 @@ public class BoardDAOImpl implements BoardDAO {
 
 
 	@Override
-	public List<BoardVO> getBoardList() throws Exception {
-		return sqlSession.selectList("com.freehoon.web.board.boardMapper.getBoardList");
+	public List<BoardVO> getBoardList(Search search) throws Exception {
+		return sqlSession.selectList("com.freehoon.web.board.boardMapper.getBoardList",search);
 	}
 
 
@@ -64,7 +68,11 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.update("com.freehoon.web.board.boardMapper.updateViewCnt", bid);
 
 	}
-
+	
+	@Override
+	public int getBoardListCnt(Search search) throws Exception{
+		return sqlSession.selectOne("com.freehoon.web.board.boardMapper.getBoardListCnt" , search);
+	}
 	
 
 }
