@@ -18,7 +18,7 @@ import com.freehoon.web.board.service.BoardService;
 
 
 @Controller
-@RequestMapping(value = "/board")
+//@RequestMapping(value = "/myblog2")
 public class BoardController {
 
 	@Inject
@@ -46,12 +46,12 @@ public class BoardController {
 		model.addAttribute("pagination" , search);
 		model.addAttribute("boardList", boardService.getBoardList(search));
 		
-		return "board/index";
+		return "myblog2/index";
 	}
 
-	@RequestMapping("/boardForm")
+	@RequestMapping("/write")
 	public String boardForm(@ModelAttribute("boardVO") BoardVO vo , Model model) {
-		return "board/boardForm";
+		return "myblog2/write";
 	}
 
 	@RequestMapping(value = "/saveBoard", method = RequestMethod.POST)
@@ -63,14 +63,14 @@ public class BoardController {
 		}else {
 				boardService.insertBoard(boardVO);
 		}
-		return "redirect:/board/getBoardList";
+		return "redirect:/getBoardList";
 	}
 
-	@RequestMapping(value = "/getBoardContent", method = RequestMethod.GET)
+	@RequestMapping(value = "/content", method = RequestMethod.GET)
 	public String getBoardContent(Model model, @RequestParam("bid") int bid) throws Exception {
 
 		model.addAttribute("boardContent", boardService.getBoardContent(bid));
-		return "board/boardContent";
+		return "myblog2/content";
 
 	}
 
@@ -82,7 +82,7 @@ public class BoardController {
 		model.addAttribute("mode", mode);
 		model.addAttribute("boardVO", new BoardVO());
 
-		return "board/boardForm";
+		return "myblog2/write";
 
 	}
 
@@ -90,7 +90,7 @@ public class BoardController {
 	public String deleteBoard(RedirectAttributes rttr, @RequestParam("bid") int bid) throws Exception {
 
 		boardService.deleteBoard(bid);
-		return "redirect:/board/getBoardList";
+		return "redirect:/getBoardList";
 	}
 
 	

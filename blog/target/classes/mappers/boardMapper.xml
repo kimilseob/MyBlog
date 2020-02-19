@@ -19,7 +19,6 @@
 		EDIT_DT
 		FROM
 		TBL_BOARD
-
 		<trim prefix="WHERE" prefixOverrides="AND|OR">
 
 			<if
@@ -44,7 +43,7 @@
 			</if>
 
 		</trim>
-
+		order by bid desc
 		limit #{startList},#{listSize}
 	</select>
 
