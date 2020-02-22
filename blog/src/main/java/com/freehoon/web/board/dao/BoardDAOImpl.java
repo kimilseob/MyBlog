@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.freehoon.common.Search;
 import com.freehoon.web.board.model.BoardVO;
+import com.freehoon.web.board.model.ReplyVO;
 
 
 
@@ -74,6 +75,26 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.selectOne("com.freehoon.web.board.boardMapper.getBoardListCnt" , search);
 	}
 	
+	
+	  // ´ñ±Û ¸®½ºÆ®
+
+		@Override
+		public List<ReplyVO> getReplyList(int bid) throws Exception {
+			return sqlSession.selectList("com.freehoon.web.board.replyMapper.getReplyList", bid);
+		}
+
+		@Override
+		public int saveReply(ReplyVO replyVO) throws Exception {
+			return sqlSession.insert("com.freehoon.web.board.replyMapper.saveReply", replyVO);
+		}
+		@Override
+		public int updateReply(ReplyVO replyVO) throws Exception {
+			return sqlSession.update("com.freehoon.web.board.replyMapper.updateReply", replyVO);
+		}
+		@Override
+		public int deleteReply(int rid) throws Exception {
+			return sqlSession.delete("com.freehoon.web.board.replyMapper.deleteReply", rid);
+		}
 
 }
 

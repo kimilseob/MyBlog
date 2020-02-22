@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.freehoon.common.Pagination;
 import com.freehoon.common.Search;
 import com.freehoon.web.board.model.BoardVO;
+import com.freehoon.web.board.model.ReplyVO;
 import com.freehoon.web.board.service.BoardService;
 
 
@@ -70,6 +70,7 @@ public class BoardController {
 	public String getBoardContent(Model model, @RequestParam("bid") int bid) throws Exception {
 
 		model.addAttribute("boardContent", boardService.getBoardContent(bid));
+		model.addAttribute("replyVO" , new ReplyVO());
 		return "myblog2/content";
 
 	}
