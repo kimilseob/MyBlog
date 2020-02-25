@@ -174,7 +174,74 @@
 			<version>2.8.5</version>
 		</dependency>
 
+		<!-- Spring security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>5.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>5.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.0.6.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>5.0.6.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.20</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- tiles --> <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp --> 
+		<dependency> 
+			<groupId>org.apache.tiles</groupId> 
+			<artifactId>tiles-jsp</artifactId> 
+			<version>3.0.8</version> 
+		</dependency> 
+
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-servlet --> 
+		<dependency>
+			 <groupId>org.apache.tiles</groupId> 
+			<artifactId>tiles-servlet</artifactId> <version>3.0.8</version> 
+		</dependency> 
+
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core --> 
+
+		<dependency> 
+			<groupId>org.apache.tiles</groupId> 
+			<artifactId>tiles-core</artifactId>
+ 			<version>3.0.8</version>
+ 		</dependency>
+		
+		
+  	  
+  	  <!-- naver -->
+	<dependency>
+		<groupId>com.github.scribejava</groupId>
+		<artifactId>scribejava-core</artifactId>
+		<version>2.8.1</version>
+	</dependency>
+	<!-- 제이슨 파싱 -->
+	<dependency>
+		<groupId>com.googlecode.json-simple</groupId>
+		<artifactId>json-simple</artifactId>
+		<version>1.1.1</version>
+	</dependency>
+
+
 	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>

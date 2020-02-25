@@ -24,7 +24,7 @@ public class BoardController {
 	@Inject
 	private BoardService boardService;
 
-	@RequestMapping(value = "/getBoardList", method = RequestMethod.GET)
+	@RequestMapping(value = {"/getBoardList", "/login/getBoardList"}, method = RequestMethod.GET)
 	public String getBoardList(Model model , @RequestParam(required = false , defaultValue = "1") int page ,
 								@RequestParam(required = false , defaultValue = "1") int range
 								, @RequestParam(required = false, defaultValue = "title") String searchType
@@ -48,7 +48,10 @@ public class BoardController {
 		
 		return "myblog2/index";
 	}
-
+	
+	
+	
+	
 	@RequestMapping("/write")
 	public String boardForm(@ModelAttribute("boardVO") BoardVO vo , Model model) {
 		return "myblog2/write";

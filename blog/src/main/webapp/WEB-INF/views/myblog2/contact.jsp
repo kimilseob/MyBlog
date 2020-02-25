@@ -41,7 +41,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index">Home</a>
+            <a class="nav-link" href="getBoardList">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about">About</a>
@@ -50,7 +50,7 @@
             <a class="nav-link" href="post">Sample Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact">Contact</a>
+            <a class="nav-link" href="login/login">Login</a>
           </li>
         </ul>
       </div>
