@@ -4,10 +4,10 @@
 
 개발환경 : 
 
-▶ Web : Java, JavaScript, jQuery, Spring MVC , BootStrap , Html5 , Oauth(Naver login api) , AJAX , RESTful api
-▶ Design & Tool : STS, GitHub , MAVEN
-▶ Server : AWS(EC2) , Ubuntu 8.0.14,WAS(tomcat)
-▶ DB : Oracle DB
+▶ Web : Java, JavaScript, jQuery, Spring MVC , BootStrap , Html5 , Oauth(Naver login api) , AJAX , RESTful api <br>
+▶ Design & Tool : STS, GitHub , MAVEN <br>
+▶ Server : AWS(EC2) , Ubuntu 8.0.14,WAS(tomcat) <br>
+▶ DB : Oracle DB <br>
 
 
 
